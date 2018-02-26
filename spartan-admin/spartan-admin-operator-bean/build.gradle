@@ -1,0 +1,15 @@
+apply plugin: 'java'
+
+group = 'com.spartan'
+version = "${versions.spartan_admin_operator}"
+jar {
+	baseName = 'operator-bean'
+}
+
+
+dependencies {
+
+	//compile libraries.mongo_java_driver
+    compile libraries.spring_data_mongodb
+    
+}

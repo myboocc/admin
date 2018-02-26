@@ -1,0 +1,28 @@
+name: spartan-admin-operator
+server:
+  port: 8099
+spartan.spring.dubbo:
+  application:
+    name: spartan-admin-operator #应用名
+  protocol:
+    name: dubbo #协议名
+    port: 20921 #协议端口
+  scan: com.spartan #扫描包名
+
+server.session.timeout: 10800 #页面会话超时时间 3 小时
+
+server.tomcat.uri-encoding: UTF-8
+#http encoding
+spring.http.encoding.charset: UTF-8
+spring.http.encoding.enabled: true
+spring.http.encoding.force: true    
+##jsp##
+#spring.mvc.view.prefix: /WEB-INF/opPage/
+#spring.mvc.view.suffix: .jsp
+
+#spring.mvc.static-path-pattern: /**
+#spring.thymeleaf.cache: false
+
+# spring.mvc.static-path-pattern=/static/**
+# spring.resources.cache-period=864000
+# spring.resources.static-locations=

@@ -1,0 +1,45 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.6.RELEASE'
+    }
+    repositories {
+    	maven { url 'http://192.168.164.168:8081/nexus/content/groups/public' }
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.6.RELEASE")
+    }
+}
+
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    maven { url 'http://192.168.164.168:8081/nexus/content/groups/public' }
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+    mavenLocal() //
+}
+
+dependencies {
+
+    compile libraries.junit
+    providedCompile 'org.springframework.boot:spring-boot-devtools'
+    testCompile(libraries.spring_boot_test)
+
+    compile (libraries.spring_boot_web) 
+    //compile libraries.framework_storage_mongo
+    //compile libraries.framework_storage_redis
+    //compile libraries.framework_rpc_dubbox
+    compile libraries.operator_bean
+    //compile project(":spartan-admin:spartan-admin-operator-bean") //涓存椂鐢ㄧ敤
+    compile 'joda-time:joda-time:2.3'
+    compile group: 'com.google.guava', name: 'guava', version: '18.0'
+    compile libraries.fastjson
+
+}
+
+
