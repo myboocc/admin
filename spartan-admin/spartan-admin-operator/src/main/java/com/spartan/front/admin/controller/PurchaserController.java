@@ -20,7 +20,7 @@ public class PurchaserController {
 	
 
 	@PostMapping("/save")
-    public ResultVO<Map<String,String>> save(@RequestBody Purchaser purchaser, String purchaserS){
+    public ResultVO<Map<String,String>> save(Purchaser purchaser, String purchaserS){
         System.out.println(purchaserS);
         System.out.println(JSON.toJSON(purchaser));
         return null;
